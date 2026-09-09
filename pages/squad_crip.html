@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad CRIP | Stoßtrupp Donnerbalken</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Teko:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-crip">
+
+    <script>
+        if (sessionStorage.getItem('squad_authenticated') !== 'true') {
+            window.location.href = '../index.html';
+        }
+    </script>
+
+    <div class="crip-bg-overlay"></div>
+
+    <header class="navbar crip-navbar">
+        <div class="nav-container">
+            <div class="brand-logo">
+                <img src="../img/logo-crip.png" alt="CRIP Logo" class="nav-logo-img crip-border">
+                <span class="brand-name text-crip-blue">SQUAD <span class="highlight-crip-gold">CRIP</span></span>
+            </div>
+            <nav class="nav-links">
+                <button onclick="logoutSquad()" class="btn-crip-back">
+                    &larr; Abmelden & Zurück
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-squad-page">
+        
+        <!-- Squad Hero Section -->
+        <div class="crip-hero-card">
+            <div class="tactical-tag">irgend ein kleiner spruch von crip</div>
+            <div class="crip-logo-container">
+                <img src="../img/logo-crip.png" alt="Squad CRIP Insignia" class="crip-full-logo">
+            </div>
+            <h1 class="hero-title crip-title">SQUAD <span class="text-crip-blue">CR<span class="text-crip-gold">I</span>P</span></h1>
+            <p class="crip-subtitle">INFANTERIE-SPEZIALISTEN ODER SO</p>
+            <div class="crip-motto-tag">ARTELERIE REGEN AM GENIESEN: <span class="text-crip-gold">MAXIMALER DRUCK</span></div>
+        </div>
+
+        <!-- Squad Layout Grid -->
+        <div class="crip-grid mt-20">
+            <!-- Ausrichtung & Codex -->
+            <div class="crip-card">
+                <h3 class="crip-card-title">SQUAD AUSRICHTUNG</h3>
+                <p class="lead">
+                    <strong>Meatgrind Squad:</strong> CRIP agiert als kompromisslose Speerspitze. Wir suchen den direkten Kontakt an den härtesten Brennpunkten der Karte.
+                </p>
+                
+                <blockquote class="crip-quote">
+                    „Lieber im Artilleriehagel untergehen, als einen Zentimeter Boden kampflos abzutreten.“
+                </blockquote>
+
+                <h4 class="mt-20 text-crip-blue">VERHALTENSCODEX & DIREKTIVE</h4>
+                <p class="text-crip-light">
+                    Fokus auf Missionsziele, eiskalte Effizienz und absolute Loyalität im Gefecht. Jedes Mitglied zieht am selben Strang, um den maximalen Druck auf den Gegner auszuüben.
+                </p>
+            </div>
+
+            <!-- Squad Roster -->
+            <div class="crip-card">
+                <h3 class="crip-card-title">SQUAD ROSTER</h3>
+                
+                <div class="roster-section mb-15">
+                    <div class="roster-header text-crip-gold">SQUAD LEADS (SL)</div>
+                    <ul class="roster-list">
+                        <li><span class="bullet-gold">▸</span> Obito</li>
+                        <li><span class="bullet-gold">▸</span> Ludiga</li>
+                        <li><span class="bullet-gold">▸</span> F4keblood</li>
+                    </ul>
+                </div>
+
+                <div class="roster-section mb-15">
+                    <div class="roster-header text-crip-blue">INFANTERIE (INF)</div>
+                    <ul class="roster-list">
+                        <li><span>▸</span> rickx</li>
+                        <li><span>▸</span> purple-HaZe</li>
+                    </ul>
+                </div>
+
+                <div class="roster-section">
+                    <div class="roster-header text-muted">OFFENE PLÄTZE</div>
+                    <ul class="roster-list roster-open">
+                        <li>Beispiel_Spieler_1 <span class="badge-slot">Frei</span></li>
+                        <li>Beispiel_Spieler_2 <span class="badge-slot">Frei</span></li>
+                        <li>Beispiel_Spieler_3 <span class="badge-slot">Frei</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer crip-footer">
+        <div class="container footer-content">
+            <p>&copy; Stoßtrupp Donnerbalken – Squad CRIP Division</p>
+        </div>
+    </footer>
+
+    <script>
+        function logoutSquad() {
+            sessionStorage.removeItem('squad_authenticated');
+            window.location.href = '../index.html';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+/* ==========================================================================
+   GLOBAL VARIABLES & BASE STYLES
+   ========================================================================== */
+:root {
+    /* StDb Theme */
+    --stdb-bg: #07080a;
+    --stdb-card-bg: #101216;
+    --stdb-border: #1e222d;
+    
+    --stdb-red: #d63031;
+    --stdb-orange: #ff7675;
+    --stdb-main-orange: #ff5500;
+    --stdb-yellow: #fdcb6e;
+    --stdb-teal: #00cec9;
+
+    --stdb-text: #f0f4f8;
+    --stdb-muted: #8a94a6;
+    --stdb-green: #00b894;
+
+    /* CRIP Squad Palette (Dunkelblau mit Gelb/Gold-Akzenten) */
+    --crip-blue: #1e90ff;
+    --crip-gold: #f1c40f;
+    --crip-bg: #060911;
+    --crip-card-bg: #0c1220;
+    --crip-card-border: #182540;
+    --crip-text: #dce5f2;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--stdb-bg);
+    color: var(--stdb-text);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, .brand-name {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* GLEICHMÄSSIGE SEKTIONS-ABSTÄNDE */
+.site-section {
+    padding: 80px 0;
+}
+
+/* ==========================================================================
+   HAUPTSEITE STYLES
+   ========================================================================== */
+.bg-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 85, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 206, 201, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(7, 8, 10, 0.95) 0%, #07080a 100%);
+    z-index: -1;
+}
+
+.highlight-orange { color: var(--stdb-main-orange); }
+.highlight-teal { color: var(--stdb-teal); }
+.text-orange { color: var(--stdb-main-orange); }
+.text-green { color: var(--stdb-green); }
+
+.gradient-text {
+    background: linear-gradient(135deg, #ff4e00 0%, #f9d423 50%, #00cec9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(16, 18, 22, 0.92);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #ff4e00, #f9d423, #00cec9) 1;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo-img { height: 42px; filter: drop-shadow(0 0 6px rgba(255, 85, 0, 0.4)); }
+.brand-name { font-size: 1.8rem; font-weight: 700; }
+
+.nav-links { display: flex; align-items: center; gap: 20px; }
+
+.nav-item {
+    color: var(--stdb-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--stdb-yellow);
+    text-shadow: 0 0 10px rgba(253, 203, 110, 0.8);
+}
+
+.btn-discord-nav {
+    background: linear-gradient(135deg, #ff5500, #ff2a00);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 85, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-discord-nav:hover {
+    box-shadow: 0 0 20px rgba(255, 85, 0, 0.9);
+    transform: translateY(-2px);
+}
+
+.hero-section { padding: 100px 20px 80px; text-align: center; }
+
+.hero-logo {
+    max-width: 180px;
+    border-radius: 50%;
+    border: 3px solid var(--stdb-main-orange);
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.5);
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05);
+}
+
+.hero-title { font-size: 4.5rem; margin: 0; line-height: 1; }
+.hero-subtitle { font-size: 1.3rem; color: var(--stdb-muted); margin-top: 10px; }
+
+.hero-tags { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+.tag {
+    background: var(--stdb-card-bg);
+    border: 1px solid var(--stdb-border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--stdb-yellow);
+}
+
+.hero-cta { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff5500 0%, #d63031 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.9);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--stdb-text);
+    border: 1px solid var(--stdb-teal);
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 206, 201, 0.1);
+    color: var(--stdb-teal);
+    transform: translateY(-2px);
+}
+
+.motto-badge {
+    margin-top: 25px;
+    color: var(--stdb-yellow);
+    font-weight: bold;
+    text-shadow: 0 0 12px rgba(253, 203, 110, 0.6);
+    letter-spacing: 2px;
+}
+
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-header h2 { font-size: 2.8rem; margin: 0; }
+.section-subtext { color: var(--stdb-muted); margin-top: 5px; }
+
+.header-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4e00, #00cec9);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.about-card, .stat-card, .match-card, .discord-box, .squad-card {
+    background-color: var(--stdb-card-bg);
+    border: 1px solid var(--stdb-border);
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover, .stat-card:hover, .match-card:hover, .squad-card:hover {
+    border-color: var(--stdb-teal);
+    box-shadow: 0 0 20px rgba(0, 206, 201, 0.25);
+}
+
+.banner-preview-wrapper { text-align: center; margin-bottom: 15px; }
+.about-banner-img { max-width: 100%; height: 160px; object-fit: contain; border-radius: 6px; }
+
+.features-list { list-style: none; padding: 0; }
+.features-list li { margin-bottom: 12px; display: flex; gap: 10px; }
+.features-list .icon { color: var(--stdb-yellow); }
+
+.squads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.squad-img-wrapper { position: relative; overflow: hidden; border-radius: 6px; margin-bottom: 15px; }
+.squad-img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+
+/* SQUAD CARDS & IMAGES (ANGEPASST: KEIN ABSCHNEIDEN MEHR) */
+.squad-img-wrapper { 
+    position: relative; 
+    height: 200px; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    border-radius: 6px; 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+}
+
+.squad-img { 
+    max-width: 90%; 
+    max-height: 90%; 
+    width: auto; 
+    height: auto; 
+    object-fit: contain; 
+    display: block; 
+}
+
+.squad-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #14161d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+    color: #444;
+    border-radius: 6px;
+}
+
+.squad-badge { position: absolute; top: 10px; right: 10px; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; z-index: 2; }
+.badge-crip { background: var(--crip-blue); color: #fff; }
+.badge-soon { background: #333; color: #888; }
+
+.squad-title { font-size: 1.8rem; margin: 0 0 10px 0; }
+.squad-desc { font-size: 0.95rem; color: var(--stdb-muted); margin-bottom: 15px; }
+
+.btn-squad-link { width: 100%; display: block; text-align: center; padding: 10px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer; transition: all 0.3s ease; }
+.btn-crip-link { background: var(--crip-blue); color: #fff; }
+.btn-crip-link:hover { background: #0044cc; box-shadow: 0 0 15px rgba(0, 85, 255, 0.6); }
+
+.btn-squad-disabled { display: block; text-align: center; padding: 10px; background: #161820; color: #555; border-radius: 4px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+.stat-number { font-size: 3.5rem; font-weight: bold; }
+
+.matches-list { display: flex; flex-direction: column; gap: 20px; }
+.match-card { display: flex; justify-content: space-between; align-items: center; }
+.match-teams { display: flex; align-items: center; gap: 20px; }
+.match-team-logo { height: 30px; }
+.match-score { font-family: 'Teko', sans-serif; font-size: 1.8rem; }
+.win-score { color: var(--stdb-green); }
+.lose-score { color: #ff3333; }
+
+.discord-box { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--stdb-main-orange); }
+.btn-discord-lg { background: #5865F2; color: #fff; padding: 14px 28px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+/* AUTH MODAL */
+.auth-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); z-index: 2000; justify-content: center; align-items: center;
+}
+
+.auth-modal-content {
+    background: var(--stdb-card-bg); border: 1px solid var(--stdb-main-orange);
+    padding: 30px; border-radius: 8px; width: 90%; max-width: 400px; position: relative; text-align: center;
+}
+
+.auth-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: var(--stdb-muted); }
+.auth-title { font-size: 2rem; margin: 0; color: var(--stdb-main-orange); }
+.auth-sub { font-size: 0.9rem; color: var(--stdb-muted); margin-bottom: 20px; }
+.auth-input { width: 100%; padding: 10px; border-radius: 4px; border: 1px solid var(--stdb-border); background: #000; color: #fff; box-sizing: border-box; margin-bottom: 10px; }
+.auth-error { color: #ff3333; font-size: 0.85rem; display: none; margin-bottom: 10px; }
+.auth-btn { width: 100%; }
+
+.accordion-item { background-color: var(--stdb-card-bg); border: 1px solid var(--stdb-border); border-radius: 6px; margin-bottom: 10px; }
+.accordion-header { padding: 15px 20px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; }
+.accordion-content { padding: 20px; border-top: 1px solid var(--stdb-border); color: var(--stdb-muted); }
+
+.footer { border-top: 1px solid var(--stdb-border); padding: 40px 20px; text-align: center; color: var(--stdb-muted); margin-top: 40px; }
+
+/* ==========================================================================
+   CRIP SQUAD DESIGN (BLAU MIT GELB/GOLD AKZENTEN)
+   ========================================================================== */
+body.theme-crip { background-color: var(--crip-bg); color: var(--crip-text); }
+.crip-bg-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(30, 144, 255, 0.08) 0%, rgba(6, 9, 17, 0.98) 100%); z-index: -1; }
+
+.text-crip-blue { color: var(--crip-blue) !important; }
+.text-crip-gold { color: var(--crip-gold) !important; }
+.text-crip-light { color: var(--crip-text); }
+.highlight-crip-gold { color: var(--crip-gold); }
+.bullet-gold { color: var(--crip-gold); }
+.crip-border { border: 2px solid var(--crip-blue); border-radius: 50%; }
+
+.crip-navbar { background-color: var(--crip-card-bg); border-bottom: 2px solid var(--crip-blue); padding: 15px 0; }
+
+.btn-crip-back {
+    color: var(--crip-text); background: transparent; border: 1px solid var(--crip-card-border);
+    padding: 6px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;
+}
+
+.btn-crip-back:hover { background: var(--crip-card-border); color: var(--crip-gold); }
+
+.my-squad-page { margin-top: 40px; margin-bottom: 60px; }
+
+.crip-hero-card {
+    background: var(--crip-card-bg); border: 1px solid var(--crip-card-border);
+    border-top: 3px solid var(--crip-gold); border-radius: 8px; padding: 40px 20px; text-align: center; position: relative;
+}
+
+.tactical-tag { position: absolute; top: 12px; right: 15px; font-size: 0.75rem; color: var(--crip-gold); letter-spacing: 1px; font-weight: bold; }
+
+.crip-full-logo { max-width: 180px; border-radius: 8px; border: 1px solid var(--crip-card-border); margin-bottom: 15px; }
+.crip-title { font-size: 3.8rem; margin: 0; }
+.crip-subtitle { font-size: 0.9rem; letter-spacing: 2px; color: var(--stdb-muted); font-weight: bold; margin: 0; }
+.crip-motto-tag { display: inline-block; margin-top: 15px; padding: 4px 14px; background: rgba(30, 144, 255, 0.1); border: 1px solid var(--crip-card-border); border-radius: 4px; color: var(--crip-blue); font-size: 0.8rem; letter-spacing: 1px; }
+
+.crip-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; }
+.crip-card { background-color: var(--crip-card-bg); border: 1px solid var(--crip-card-border); border-radius: 8px; padding: 25px; }
+.crip-card-title { font-size: 1.8rem; border-bottom: 1px solid var(--crip-card-border); padding-bottom: 10px; margin-top: 0; }
+
+.crip-quote { border-left: 3px solid var(--crip-gold); padding: 10px 15px; background: rgba(241, 196, 15, 0.05); color: var(--crip-text); font-style: italic; margin: 20px 0; }
+
+.roster-header { font-weight: bold; font-size: 0.85rem; margin-bottom: 8px; letter-spacing: 1px; }
+.roster-list { list-style: none; padding: 0; margin: 0; }
+.roster-list li { padding: 8px 12px; background: rgba(255, 255, 255, 0.02); border-radius: 4px; margin-bottom: 6px; border-left: 2px solid var(--crip-blue); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+.roster-open li { border-left-color: #333; color: #666; justify-content: space-between; }
+.badge-slot { background: #1a202c; color: #777; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; }
+
+.mt-20 { margin-top: 20px; }
+.mb-15 { margin-bottom: 15px; }
+.text-muted { color: #555; }
+.crip-footer { border-color: var(--crip-card-border); background: var(--crip-bg); }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .about-grid, .crip-grid, .discord-box, .match-card { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+    .nav-container { flex-direction: column; gap: 10px; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+
+
+
+
+
+
+
+/* Erstellt einen rein weißen Hintergrund für die Login-Schranke */
+.auth-overlay-white {
+    background-color: #ffffff !important;
+}
+
+/* Ändert die Schriftfarbe des Modals auf dunkle Lesbarkeit auf weißem Grund */
+.auth-modal-white-content {
+    background: #101216 !important; /* Dunkles Login-Fenster auf weißem Grund */
+    border: 2px solid var(--stdb-main-orange) !important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3) !important;
+}

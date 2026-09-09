@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoßtrupp Donnerbalken (StDb) | Hell Let Loose Clan</title>
+    <meta name="description" content="Stoßtrupp Donnerbalken (StDb) - Deutschsprachiger Hell Let Loose Clan aus der DACH-Region.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Teko:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- WEISSE SCHRANKE: Verhindert jegliches Durchscheinen der Seite -->
+    <style>
+        body { display: none; }
+        .white-wall-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background-color: #ffffff !important;
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .white-wall-box {
+            background: #101216 !important;
+            border: 2px solid #ff5500 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 35px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        if (sessionStorage.getItem('site_authenticated') === 'true') {
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.style.display = 'block';
+                const wall = document.getElementById('whiteWallAuth');
+                if (wall) wall.style.display = 'none';
+            });
+        } else {
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.style.display = 'block';
+            });
+        }
+    </script>
+
+    <!-- Reine weiße Anmeldewand -->
+    <div id="whiteWallAuth" class="white-wall-overlay">
+        <div class="white-wall-box">
+            <h3 class="auth-title">STOẞTRUPP DONNERBALKEN</h3>
+            <p class="auth-sub">Zugang derzeit nur für Mitglieder</p>
+            <form onsubmit="handleMainSiteAuth(event)">
+                <input type="text" id="mainUsername" placeholder="Benutzername" class="auth-input" required autocomplete="off">
+                <input type="password" id="mainPassword" placeholder="Passwort" class="auth-input" required>
+                <div id="mainAuthError" class="auth-error">Benutzername oder Passwort falsch!</div>
+                <button type="submit" class="btn-primary auth-btn">Anmelden</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-overlay"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand-logo">
+                <img src="img/logo-hex.png" alt="StDb Logo" class="nav-logo-img">
+                <span class="brand-name">STOẞTRUPP <span class="highlight-orange">DONNERBALKEN</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#about" class="nav-item">Über Uns</a>
+                <a href="#squads" class="nav-item">Squads</a>
+                <a href="#stats" class="nav-item">Stats</a>
+                <a href="#matches" class="nav-item">Matches</a>
+                <a href="#rechtliches" class="nav-item">Rechtliches</a>
+                <a href="https://discord.gg/donnerbalken" target="_blank" rel="noopener" class="btn-discord-nav">
+                    Discord Join
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-logo-wrapper">
+                <img src="img/logo-full.jpg" alt="Stoßtrupp Donnerbalken Clan Logo" class="hero-logo">
+            </div>
+            <h1 class="hero-title">MIT BLITZ UND <span class="gradient-text">DONNER!</span></h1>
+            <p class="hero-subtitle">Spielergemeinschaft Stoßtrupp Donnerbalken</p>
+
+            <div class="hero-tags">
+                <span class="tag">Hell Let Loose</span>
+                <span class="tag">ECL Division 5</span>
+                <span class="tag">DE / AT / CH</span>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://discord.gg/donnerbalken" target="_blank" rel="noopener" class="btn-primary">Ab auf den Discord</a>
+                <a href="#stats" class="btn-secondary">Clan-Stats</a>
+            </div>
+
+            <div class="motto-badge"> „GUT SCHISS!“</div>
+        </div>
+    </section>
+
+    <section id="about" class="site-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>WER SIND WIR?</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card story-card">
+                    <h3>Wie alles anfing</h3>
+                    <p>Wir schreiben das Frühjahr 2020. Deutschland ist im Würgegriff der Coronapandemie und die Spieler haben ein Problem: zu viel Zeit und zu wenige kommunikative Mitspieler.</p>
+                    <p>Also dachte sich eines späten Abends ein Spieler, manche munkeln es wäre C45h gewesen, sich mit anderen Randoms zusammenzuschließen und eine Steamgruppe zu gründen. Es gab nur die Prämisse, kommunikativ zu sein und Spaß am Spiel zu haben. Und so wuchs die Gruppe schon am ersten Abend auf ein Dutzend Spieler. Diese wiederum luden mehr und mehr ein, bis sie irgendwann weit über 100 lag.</p>
+                    <p>Einige wurden von anderen Clans abgeworben, manche verloren ihr Interesse am Spiel, andere mussten ihren Corona Lockdown Urlaub abbrechen, doch ein harter Kern hat sich herausgebildet.</p>
+                    <p>Ebendiese Spielergemeinschaft hat es sich zum Ziel gesetzt, daraus einen Clan auszuheben, welcher weiterhin locker organisiert bleibt, wo jeder Spieler ein <em>„Freier unter Freien“</em> ist.</p>
+                </div>
+
+                <div class="about-card offers-card">
+                    <div class="banner-preview-wrapper">
+                        <img src="img/banner_stdb.jpg" alt="StDb Wappen Banner" class="about-banner-img">
+                    </div>
+                    <h3>Was wir dir bieten</h3>
+                    <ul class="features-list">
+                        <li><span class="icon">✔</span> <span><strong>Eigener Event-Server:</strong> Platz für gemeinsame Aktionen, Matches und entspannte Abende.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>Aktiver Discord-Server:</strong> Die zentrale Anlaufstelle für Sprachchat & Community.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>Echter Spielspaß:</strong> Spaß am Spiel mit anderen kommunikativen Spielern.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>Keine Pflichttermine:</strong> Zocken, wenn du Zeit und Lust hast.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>Keine Folgen bei Abstinenz:</strong> Reallife geht immer vor. Kommt einfach online, wenn ihr Bock habt.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>Keine Verantwortungen:</strong> Es sei denn, du suchst aktiv danach.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>Flache Hierarchie:</strong> Extrem flach bzw. nicht vorhanden – ein Freier unter Freien.</span></li>
+                        <li><span class="icon">✔</span> <span><strong>ECL & Competitive:</strong> Wir spielen in der ECL Division 5 – ambitioniert, aber ohne verklemmtes Tryharden.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="squads" class="site-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>UNSERE SQUADS</h2>
+                <p class="section-subtext">Spezialisierte Einheiten des Stoßtrupps</p>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="squads-grid">
+                <div class="squad-card squad-crip-card">
+                    <div class="squad-img-wrapper">
+                        <img src="img/logo-crip.png" alt="Squad CRIP Logo" class="squad-img" loading="lazy">
+                        <span class="squad-badge badge-crip">Geschützt</span>
+                    </div>
+                    <div class="squad-card-body">
+                        <h3 class="squad-title">SQUAD CRIP</h3>
+                        <p class="squad-desc">Infanterie-Taktikspezialisten. Höchste Disziplin an der Front und kompromissloser Vorstoß.</p>
+                        <button onclick="openAuthModal('pages/squad_crip.html')" class="btn-squad-link btn-crip-link">Login & Bereich Öffnen</button>
+                    </div>
+                </div>
+
+                <div class="squad-card placeholder-card">
+                    <div class="squad-img-wrapper">
+                        <div class="squad-img-placeholder">SQUAD RAGE</div>
+                        <span class="squad-badge badge-soon">Demnächst</span>
+                    </div>
+                    <div class="squad-card-body">
+                        <h3 class="squad-title text-muted">SQUAD RAGE</h3>
+                        <p class="squad-desc">Aggressive Sturmeinheit. Bricht feindliche Linien mit maximaler Feuerkraft.</p>
+                        <span class="btn-squad-disabled">In Planung</span>
+                    </div>
+                </div>
+
+                <div class="squad-card placeholder-card">
+                    <div class="squad-img-wrapper">
+                        <div class="squad-img-placeholder">SQUAD RINO</div>
+                        <span class="squad-badge badge-soon">Demnächst</span>
+                    </div>
+                    <div class="squad-card-body">
+                        <h3 class="squad-title text-muted">SQUAD RINO</h3>
+                        <p class="squad-desc">Schwere Panzer- und Unterstützungseinheit für massiven Schutz.</p>
+                        <span class="btn-squad-disabled">In Planung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="site-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>JAHRES-STATISTIKEN</h2>
+                <p class="section-subtext">Unsere Bilanz im Gefecht</p>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">48</div>
+                    <div class="stat-label">Matches absolviert</div>
+                    <span class="stat-sub">Saison 2025/2026</span>
+                </div>
+
+                <div class="stat-card highlight-border-green">
+                    <div class="stat-number text-green">65%</div>
+                    <div class="stat-label">Winrate</div>
+                    <span class="stat-sub">31 Siege / 17 Niederlagen</span>
+                </div>
+
+                <div class="stat-card highlight-border-orange">
+                    <div class="stat-number text-orange">~4</div>
+                    <div class="stat-label">Matches / Monat</div>
+                    <span class="stat-sub">ECL Liga & Friendlies</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="matches" class="site-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>MATCH RESULTS</h2>
+                <p class="section-subtext">Die letzten Gefechte</p>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="matches-list">
+                <div class="match-card win">
+                    <div class="match-league">ECL · Div 5</div>
+                    <div class="match-teams">
+                        <div class="team team-stdb">
+                            <img src="img/logo-hex.png" alt="StDb" class="match-team-logo">
+                            <span class="team-name">StDb</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score win-score">3</span>
+                            <span class="score-divider">:</span>
+                            <span class="score lose-score">2</span>
+                        </div>
+                        <div class="team team-enemy">
+                            <span class="team-name">Gegner</span>
+                            <img src="img/placeholder.png" alt="Gegner" class="match-team-logo">
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span><strong class="highlight-teal">Map:</strong> Carentan</span>
+                        <span><strong class="highlight-teal">Datum:</strong> 03.09.2026</span>
+                    </div>
+                </div>
+
+                <div class="match-card loss">
+                    <div class="match-league">Friendly</div>
+                    <div class="match-teams">
+                        <div class="team team-stdb">
+                            <img src="img/logo-hex.png" alt="StDb" class="match-team-logo">
+                            <span class="team-name">StDb</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score lose-score">1</span>
+                            <span class="score-divider">:</span>
+                            <span class="score win-score">4</span>
+                        </div>
+                        <div class="team team-enemy">
+                            <span class="team-name">Gegner</span>
+                            <img src="img/placeholder.png" alt="Gegner" class="match-team-logo">
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span><strong class="highlight-teal">Map:</strong> Foy</span>
+                        <span><strong class="highlight-teal">Datum:</strong> 28.08.2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="site-section discord-cta-section">
+        <div class="container">
+            <div class="discord-box">
+                <div class="discord-info">
+                    <h2>INTERESSE?</h2>
+                    <p>Schau einfach bei uns im Discord vorbei oder melde dich auf unserem Server. Wir sehen uns auf dem Schlachtfeld!</p>
+                </div>
+                <a href="https://discord.gg/donnerbalken" target="_blank" rel="noopener" class="btn-discord-lg">
+                    Zum Discord Server
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="rechtliches" class="site-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>RECHTLICHES</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="accordion-wrapper">
+                <details class="accordion-item">
+                    <summary class="accordion-header">
+                        <span>Impressum & Haftungsausschluss</span>
+                        <span class="accordion-icon">+</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p><strong>Angaben gemäß Informationspflichten:</strong></p>
+                        <p>Stoßtrupp Donnerbalken (StDb)<br>
+                        Reine private Hobby-Spielergemeinschaft (kein eingetragener Verein)</p>
+                        
+                        <p><strong>Kontakt:</strong><br>
+                        Kontakt bitte direkt über unseren Discord-Server:<br>
+                        <a href="https://discord.gg/donnerbalken" target="_blank" rel="noopener" class="highlight-orange">discord.gg/donnerbalken</a></p>
+
+                        <p><strong>Haftungsausschluss (Disclaimer):</strong><br>
+                        Diese Webseite dient rein privaten Informations- und Hobbyzwecken unserer Gaming-Community. Wir übernehmen keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Inhalte.</p>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary class="accordion-header">
+                        <span>Datenschutzerklärung</span>
+                        <span class="accordion-icon">+</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p><strong>Datenschutz auf einen Blick:</strong><br>
+                        Als reine Hobby-Community erheben wir über diese Webseite keine personenbezogenen Daten, nutzen keine Tracking-Cookies und betreiben keinerlei Analyse-Tools.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Squad-Login Modal (CRIP) -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="auth-close" onclick="closeAuthModal()">&times;</span>
+            <h3 class="auth-title">SQUAD-ZUGANG</h3>
+            <p class="auth-sub">Bitte Passwort eingeben, um fortzufahren.</p>
+            <form onsubmit="handleAuth(event)">
+                <input type="password" id="squadPassword" placeholder="Passwort eingeben..." class="auth-input" required>
+                <div id="authError" class="auth-error">Falsches Passwort!</div>
+                <button type="submit" class="btn-primary auth-btn">Anmelden</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; Stoßtrupp Donnerbalken – Spielergemeinschaft</p>
+            <p class="footer-disclaimer">Hell Let Loose ist eine eingetragene Marke von Team17 Digital Limited.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Startseiten-Login Logik (Blendet die weiße Wand aus)
+        function handleMainSiteAuth(e) {
+            e.preventDefault();
+            const user = document.getElementById('mainUsername').value;
+            const pass = document.getElementById('mainPassword').value;
+
+            if (user === 'Orga' && pass === 'stdb2026') {
+                sessionStorage.setItem('site_authenticated', 'true');
+                const wall = document.getElementById('whiteWallAuth');
+                if (wall) wall.style.display = 'none';
+            } else {
+                document.getElementById('mainAuthError').style.display = 'block';
+            }
+        }
+
+        // Squad-Login Logik (CRIP)
+        let targetPage = '';
+
+        function openAuthModal(pageUrl) {
+            targetPage = pageUrl;
+            document.getElementById('authModal').style.display = 'flex';
+            document.getElementById('authError').style.display = 'none';
+            document.getElementById('squadPassword').value = '';
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
+
+        function handleAuth(e) {
+            e.preventDefault();
+            const pass = document.getElementById('squadPassword').value;
+            
+            if (pass === 'stdb2026' || pass === 'stdb') {
+                sessionStorage.setItem('squad_authenticated', 'true');
+                window.location.href = targetPage;
+            } else {
+                document.getElementById('authError').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
